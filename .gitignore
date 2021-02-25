@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# IntelliJ
+workspace.xml
+usage.statistics.xml
+tasks.xml
+shelf
+*.iml
+.idea/modules.xml
+.idea/libraries
+target
