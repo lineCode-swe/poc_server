@@ -28,36 +28,36 @@ public class MyResource {
 //        return product;
 //    }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Product> returnInt() {
-        List<Product> l = new ArrayList<Product>(3);
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public List<Product> returnInt() {
+//        List<Product> l = new ArrayList<Product>(3);
+//
+//        Product a = new Product();
+//        a.setName("iPhone");
+//        a.setQty(3);
+//
+//        Product b = new Product();
+//        b.setName("Samsung");
+//        b.setQty(4);
+//
+//        Product c = new Product();
+//        c.setName("Computer");
+//        c.setQty(7);
+//
+//        l.add(a);
+//        l.add(b);
+//        l.add(c);
+//
+//        return l;
+//    }
 
-        Product a = new Product();
-        a.setName("iPhone");
-        a.setQty(3);
-
-        Product b = new Product();
-        b.setName("Samsung");
-        b.setQty(4);
-
-        Product c = new Product();
-        c.setName("Computer");
-        c.setQty(7);
-
-        l.add(a);
-        l.add(b);
-        l.add(c);
-
-        return l;
-    }
-
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response createProductInJSON(Product product) {
-
-        String result = "Product created: " + product;
-
-        return Response.status(201).entity(result).build();
-    }
+//    @POST
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public Response createProductInJSON(Product product) {
+//
+//        String result = "Product created: " + product;
+//
+//        return Response.status(201).entity(result).build();
+//    }
 }
