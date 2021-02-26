@@ -19,20 +19,12 @@ public class RestGrid {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Grid returnGrid() {
-        return Main.map;  // TODO: Ricordati di creare una Lista contenente tutte le info di Cell[][] dentro map.
+    public List<Cell> returnGrid() {
+        List<Cell> l = new ArrayList<Cell>();
+        for (int x = 0; x < Main.map.getLenght(); ++x )
+            for (int y = 0; y < Main.map.getHeight(); ++y) // TODO: Chiedere ad Aledindo se preferisce per righe o per colonne.
+                l.add(Main.map.getCell(x,y));
+        return l;
     }
-
-
-/*
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response createProductInJSON(Product product) {
-
-        String result = "Product created: " + product;
-
-        return Response.status(201).entity(result).build();
-    }
-   */
 
 }
