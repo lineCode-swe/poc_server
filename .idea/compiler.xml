@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jersey_grizzly_reference" />
         <module name="JerseyGrizzly2" />
+        <module name="poc_server" />
       </profile>
     </annotationProcessing>
   </component>
