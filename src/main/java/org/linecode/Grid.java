@@ -13,7 +13,6 @@ public class Grid {
         for (int x = 0; x < lenght; ++x )
             for (int y = 0; y < height; ++y)
                 g[x][y] = new Cell(x, y);
-
     }
 
     public int getLenght() {
@@ -28,9 +27,7 @@ public class Grid {
         return g[x][y];
     }
 
-
     /*
-     *
     public static void main(String[] args) {
         Grid prova = new Grid(3,20);
         for (int x = 0; x < prova.lenght; ++x ) {
@@ -41,7 +38,4 @@ public class Grid {
         }
 
     }*/
-
-    //
-
 }

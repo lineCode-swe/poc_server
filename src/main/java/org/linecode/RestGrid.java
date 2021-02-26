@@ -12,15 +12,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Root resource (exposed at "myresource" path)
+ * Root resource (exposed at "grid" path)
  */
 @Path("grid")
-
 public class RestGrid {
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Grid returnGrid() {
-        return Main.map;  //TODO: Ricordati di creare una Lista contenente tutte le info di Cell[][] dentro map.
+        return Main.map;  // TODO: Ricordati di creare una Lista contenente tutte le info di Cell[][] dentro map.
     }
 
 
