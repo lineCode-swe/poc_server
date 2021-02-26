@@ -13,11 +13,12 @@ import java.net.URI;
  *
  */
 public class Main {
+
     // Base URI the Grizzly HTTP server will listen on.
     // ATTENZIONE: url cambiato da localhost a 0.0.0.0 per funzionare all'interno
     // di un container docker. Fonte: https://yurisubach.com/2016/07/14/jersey-dockerize/
     public static final String BASE_URI = "http://0.0.0.0:8080/myapp/";
-
+    static Grid map;
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
      * @return Grizzly HTTP server.
@@ -45,6 +46,7 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
         final HttpServer server = startServer();
+        map = new Grid(3,20);
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
         System.in.read();
