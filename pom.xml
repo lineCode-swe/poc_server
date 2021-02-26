@@ -6,7 +6,7 @@
     <groupId>org.linecode</groupId>
     <artifactId>jersey-grizzly-reference</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version> <!-- Da aggiornare con il numero di versione in forma corretta -->
+    <version>0.0.1</version>
     <name>jersey-grizzly-reference</name>
 
     <dependencyManagement>
@@ -31,9 +31,6 @@
             <artifactId>jersey-hk2</artifactId>
         </dependency>
         <dependency>
-            <!-- Da preferire al posto del utility JSON di
-            default: jersey-media-json-binding
-            -->
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
         </dependency>
@@ -73,10 +70,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <!-- Plugin non previsto dall'archetipo jersey-quickstart-grizzly2
-                 che consente la creazione in fase di package di un singolo file
-                 .jar contenente tutte le dipendenze necessarie alla sua esecuzione
-                 -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.2.0</version>
@@ -98,81 +91,6 @@
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                 </configuration>
-            </plugin>
-            <plugin>
-                <!-- Plugin che fa analisi statica sul codice per verificare che
-                sia scritto secondo le norme di progetto.
-                -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.version}</version>
-                <configuration>
-                    <failsOnError>true</failsOnError>
-                    <configLocation>checkstyle.xml</configLocation>
-                    <consoleOutput>true</consoleOutput>
-                    <linkXRef>false</linkXRef>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>static-test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                    <!-- Decommentare linee seguenti per generazione del report HTML -->
-<!--                    <execution>-->
-<!--                        <id>report-gen</id>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>checkstyle</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-                </executions>
-            </plugin>
-            <plugin>
-                <!-- Plugin che genera un report su varie metriche in fase di
-                package su target/site/jacoco/index.html.
-                Metriche: https://www.eclemma.org/jacoco/trunk/doc/counters.html
-                -->
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version>
-                <executions>
-                    <execution>
-                        <id>default-prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>default-report</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>default-check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <rules> <!-- TODO: regole da verificare -->
-                                <rule>
-                                    <element>BUNDLE</element>
-                                    <limits>
-                                        <limit>
-                                            <counter>COMPLEXITY</counter>
-                                            <value>COVEREDRATIO</value>
-                                            <minimum>1.00</minimum>
-                                        </limit>
-                                    </limits>
-                                </rule>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
