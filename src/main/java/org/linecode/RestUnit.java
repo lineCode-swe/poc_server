@@ -54,7 +54,7 @@ public class RestUnit {
             for (Position cell : currentCells) {
                 if (distances[cell.getX()][cell.getY()] == Integer.MAX_VALUE
                         && !map.getCell(cell).isObstacle()
-                        && !map.getCell(cell).isUnit()
+                        //&& !map.getCell(cell).isUnit() TODO: Il test va fatto nel prodotto finito
                         && !map.getCell(cell).isLocked()) {
                     distances[cell.getX()][cell.getY()] = distance;
                     addNeighbors(cell, nextCells);
