@@ -27,6 +27,8 @@ public class RestUnit {
             System.out.println("Rilevato ostacolo: " + p);
         }
 
+        Main.map.setUnitGrid(update.getX(), update.getY());
+
         if(update.isPath()) {
             int distanza = getPath(Main.map, new Position(update.getX(), update.getY()), Main.map.getPoi(), path);
             System.out.println("La distanza dal POI è: " + distanza);
