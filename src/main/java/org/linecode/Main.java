@@ -35,8 +35,8 @@ public class Main {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-
-        map = new Grid(20,3);
+        map = new Grid(20, 3);
+        map.setPoiGrid(19, 2);
 
         final HttpServer server = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "

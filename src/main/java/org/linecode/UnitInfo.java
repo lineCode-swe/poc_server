@@ -29,6 +29,4 @@ public class UnitInfo {
     public String toString() {
         return "(" + x + "," + y + ") ;" + " path = " + path + " " +  obstacle.toString();
     }
-
-
 }

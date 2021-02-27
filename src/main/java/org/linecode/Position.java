@@ -2,16 +2,13 @@ package org.linecode;
 
 public class Position {
 
-    private int x , y;
+    private int x, y;
 
+    public Position() {}
 
     public Position(int x, int y) {
         this.x = x;
         this.y = y;
-    }
-
-    public Position() {
-
     }
 
     public int getX() {
@@ -34,7 +31,7 @@ public class Position {
         if(x.getClass() != this.getClass())
             return false;
 
-        final Position cmp = (Position)x;
-        return this.x==cmp.getX() && this.y==cmp.getY();
+        final Position cmp = (Position) x;
+        return this.x == cmp.getX() && this.y == cmp.getY();
     }
 }
