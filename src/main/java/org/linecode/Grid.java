@@ -5,6 +5,7 @@ public class Grid {
 
     private final Cell[][] g ;
     private final int lenght, height;
+    private int unitx = 0, unity = 0;
 
     public Grid(int lenght, int height) {
         g = new Cell[lenght][height];
@@ -13,6 +14,7 @@ public class Grid {
         for (int x = 0; x < lenght; ++x )
             for (int y = 0; y < height; ++y)
                 g[x][y] = new Cell(x, y);
+        g[0][0].setUnit(true);
     }
 
     public int getLenght() {
@@ -26,6 +28,18 @@ public class Grid {
     public Cell getCell(int x, int y) {
         return g[x][y];
     }
+
+    public Cell getCell(Position p){
+        return g[p.getX()][p.getY()];
+    }
+
+    public void setUnitGrid(int unitx, int unity){
+        g[this.unitx][this.unity].setUnit(false);
+        this.unitx = unitx;
+        this.unity = unity;
+        g[this.unitx][this.unity].setUnit(true);
+    }
+
 
     /*
     public static void main(String[] args) {

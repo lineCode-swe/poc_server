@@ -2,28 +2,39 @@ package org.linecode;
 
 public class Position {
 
-    private int xo , yo;
+    private int x , y;
 
 
-    public Position(int xo, int yo) {
-        this.xo = xo;
-        this.yo = yo;
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public Position() {
 
     }
 
-    public int getXo() {
-        return xo;
+    public int getX() {
+        return x;
     }
 
-    public int getYo() {
-        return yo;
+    public int getY() {
+        return y;
     }
 
     @Override
     public String toString(){
-        return "(" + xo + "," + yo + ")";
+        return "(" + x + "," + y + ")";
+    }
+
+    @Override
+    public boolean equals(Object x){
+        if(x == null)
+            return false;
+        if(x.getClass() != this.getClass())
+            return false;
+
+        final Position cmp = (Position)x;
+        return this.x==cmp.getX() && this.y==cmp.getY();
     }
 }
