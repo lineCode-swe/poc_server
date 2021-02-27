@@ -53,4 +53,9 @@ public class Cell {
     public void setPoi(boolean poi) {
         this.poi = poi;
     }
+
+    @Override
+    public String toString() {
+        return "{(" + x + "," + y + ") , Locked: " + locked + " , Obstacle : " + obstacle + " , Unit : " + unit + " , Poi " + poi + "}";
+    }
 }
