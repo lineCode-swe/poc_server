@@ -34,7 +34,6 @@ public class RestUnit {
             System.out.println("La distanza dal POI è: " + distanza);
         }
 
-        Main.map.setUnitGrid(update.getX(), update.getY());
         return path;
     }
 
