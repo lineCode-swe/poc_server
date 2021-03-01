@@ -15,7 +15,6 @@ import java.net.URI;
 public class Main {
 
     static Grid map;
-
     public static final String BASE_URI = "http://0.0.0.0:8080/myapp/";
 
     /**
@@ -39,10 +38,9 @@ public class Main {
         map.setPoiGrid(19, 2);
 
         final HttpServer server = startServer();
-        System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
-        System.in.read();
-        server.stop();
+
+        System.out.println("WebApp available at: " + BASE_URI);
+        System.out.println("Press Ctrl + C (or Stop from IDE) to shutdown");
     }
 }
 
