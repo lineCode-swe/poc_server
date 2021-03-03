@@ -26,6 +26,8 @@ public class RestGrid {
             }
         }
 
+        System.out.println("Requested current grid through HTTP GET");
+
         return l;
     }
 }

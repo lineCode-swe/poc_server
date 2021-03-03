@@ -24,6 +24,7 @@ public class Main {
     public static HttpServer startServer() {
         final ResourceConfig rc = new ResourceConfig().packages("org.linecode");
         rc.register(JacksonFeature.class);
+        rc.register(CORSResponseFilter.class);
 
         return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
     }
